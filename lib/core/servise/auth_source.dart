@@ -71,16 +71,5 @@ class AuthDatasource {
     }
   }
 
-// Future<ProfileModel?> fetchUserProfile() async {
-//   try {
-//     final String userId = FirebaseAuth.instance.currentUser!.uid;
-//     final doc = await firestore.collection('user').doc(userId).get();
-//     if (doc.exists) {
-//       return ProfileModel.fromJson(doc.data()!, doc.id);
-//     }
-//   } catch (e) {
-//     print("Fetch user profile error: $e");
-//   }
-//   return null;
-// }
+
 }

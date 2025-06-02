@@ -13,11 +13,14 @@ import 'package:kutuku/features/home/manager/home_event.dart';
 import 'package:kutuku/features/home/page/home_detail.dart';
 import 'package:kutuku/features/home/page/product_detail.dart';
 import 'package:kutuku/features/onboarding/page/onboarding_detail.dart';
+import 'package:kutuku/features/user/manager/user_bloc.dart';
+import 'package:kutuku/features/user/manager/user_event.dart';
+import 'package:kutuku/features/user/page/user_detail.dart';
 
 import '../../features/splash/page/splash_detail.dart';
 
 final router = GoRouter(
-  initialLocation: Routes.home,
+  initialLocation: Routes.user,
   routes: [
     GoRoute(
       path: Routes.splash,
@@ -61,6 +64,12 @@ final router = GoRouter(
         );
       },
     ),
-
+    GoRoute(
+      path: Routes.user,
+      builder: (context, state) => BlocProvider(
+        create: (context) => UserBloc(repo: context.read()),
+        child: UserDetail(),
+      ),
+    ),
   ],
 );

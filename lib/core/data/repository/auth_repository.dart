@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:kutuku/core/data/model/user_mode.dart';
 import 'package:kutuku/core/servise/auth_localdatasourse.dart';
 
 import '../../servise/auth_source.dart';
@@ -12,6 +13,7 @@ class AuthRepository extends ChangeNotifier {
     required this.authDatasource,
     required this.authLocalDatasource,
   });
+
 
   Future<AuthModel?> getAuth() async {
     return await authLocalDatasource.getAuth();
@@ -51,10 +53,13 @@ class AuthRepository extends ChangeNotifier {
     }
   }
 
-  // Future<ProfileModel?> getUserProfile() async {
+
+   // Future<ProfileModel?> getUserProfile() async {
   //   // final auth = await getAuth();
   //   // if (auth == null) return null;
   //   final profile = await authDatasource.fetchUserProfile();
   //   return profile;
   // }
+
+
 }

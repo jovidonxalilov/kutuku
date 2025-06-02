@@ -8,6 +8,7 @@ import 'package:kutuku/core/navigation/router.dart';
 import 'package:kutuku/core/servise/auth_localdatasourse.dart';
 import 'package:kutuku/core/servise/auth_source.dart';
 import 'package:kutuku/features/auth/manager/auth_bloc.dart';
+import 'package:kutuku/features/user/manager/user_bloc.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (context) => AuthBloc(repo: context.read()),),
           Provider(create: (context) => ApiClient(),),
           Provider(create: (context) => ProductRepository(client: context.read()),),
+          BlocProvider(create: (context) => UserBloc(repo: context.read()),)
         ],
         child: MaterialApp.router(
           debugShowCheckedModeBanner: false,
